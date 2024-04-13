@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>VideoShop: Localized Semantic Video Editing with Noise-Extrapolated Diffusion Inversion</title>
+    <link href="assets/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="page-container">
+        <h1 align="center">VideoShop: Localized Semantic Video Editing with Noise-Extrapolated Diffusion Inversion</h1>
+        <h2 align="center">Supplementary Material</h2>
+
+        <p align="center">&nbsp;</p>
+        <a href="#top"></a>
+
+        <p>Sections</p>
+        <ul>
+            <li><a href="#intro">Introduction Video</a></li>
+            <li><a href="#demo">Demo</a></li>
+            <li><a href="#more_results">More Results</a></li>
+            <li><a href="#comparison_baselines">Comparison to Baselines</a></li>
+            <li><a href="#ablation">Ablation</a></li>
+            <li><a href="#limitations">Limitations</a></li>
+        </ul>
+        <br/>
+
+        <p>Tips:</p>
+        <ul>
+            <li><span class="emph">Press the spacebar to play/pause all videos simultaneously.</span></li>
+        </ul>
+
+        <p style="font-size: 10px; text-align: right;">This page was adopted from the excellent work by diffusion-motion-transfer, licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC-BY-SA 4.0</a>.</p>
+        <hr>
+
+        <h2 align="left" id="intro">Introduction Video</h2>
+        <br/>
+
+        <table width="1200" align="center">
+            <tbody>
+                <tr>
+                </tr>
+                <tr>
+                    <th>
+                        <a href="assets/intro.mp4">
+                            <a href="assets/intro.mp4"> <video width="600" height="337.5" src="assets/intro.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 align="left" id="demo">Demo</h2>
+        <br/>
+
+        <table width="1200" align="center">
+            <tbody>
+                <tr>
+                </tr>
+                <tr>
+                    <th style="font-size: 16px">Original video</th>
+                    <th style="font-size: 16px">Edited video</th>
+                    <th style="font-size: 16px">Instruction detail</th>
+                </tr>
+                <tr>
+                    <th>
+                        <a href="assets/original/cats.mp4">
+                            <a href="assets/original/cats.mp4"> <video width="384" height="216" src="assets/original/cats.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/edited/cats.mp4">
+                            <a href="assets/edited/cats.mp4"> <video width="384" height="216" src="assets/edited/cats.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><img width="384" height="216" src="assets/instr/cats.png" />
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <a href="assets/original/davis-all-2-4.mp4">
+                            <a href="assets/original/davis-all-2-4.mp4"> <video width="384" height="216" src="assets/original/davis-all-2-4.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/edited/davis-all-2-4.mp4">
+                            <a href="assets/edited/davis-all-2-4.mp4"> <video width="384" height="216" src="assets/edited/davis-all-2-4.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><img width="384" height="216" src="assets/instr/davis-all-2-4.png" />
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <a href="assets/original/davis-all-23-3.mp4">
+                            <a href="assets/original/davis-all-23-3.mp4"> <video width="384" height="216" src="assets/original/davis-all-23-3.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/edited/davis-all-23-3.mp4">
+                            <a href="assets/edited/davis-all-23-3.mp4"> <video width="384" height="216" src="assets/edited/davis-all-23-3.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><img width="384" height="216" src="assets/instr/davis-all-23-3.png" />
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>&nbsp;</p>
+        <hr>
+        <h2 align="left" id="more_results">More Results</h2>
+        <br/>
+        <table width="1200" align="center">
+            <tbody>
+                <tr>
+                </tr>
+                <tr>
+                    <th style="font-size: 16px">Input video</th>
+                    <th style="font-size: 16px">Edited video</th>
+                    <th style="font-size: 16px">Instruction (text)</th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <a href="assets/results/original/magicbrush-replace-30.mp4">
+                            <a href="assets/results/original/magicbrush-replace-30.mp4"> <video width="384" height="216" src="assets/results/original/magicbrush-replace-30.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/results/edited/magicbrush-replace-30.mp4">
+                            <a href="assets/results/edited/magicbrush-replace-30.mp4"> <video width="384" height="216" src="assets/results/edited/magicbrush-replace-30.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><p>make her wear a baseball hat</p></th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <a href="assets/results/original/expert-all-13.mp4">
+                            <a href="assets/results/original/expert-all-13.mp4"> <video width="384" height="216" src="assets/results/original/expert-all-13.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/results/edited/expert-all-13.mp4">
+                            <a href="assets/results/edited/expert-all-13.mp4"> <video width="384" height="216" src="assets/results/edited/expert-all-13.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><p>remove the person</p></th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <a href="assets/results/original/magicbrush-replace-14.mp4">
+                            <a href="assets/results/original/magicbrush-replace-14.mp4"> <video width="384" height="216" src="assets/results/original/magicbrush-replace-14.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/results/edited/magicbrush-replace-14.mp4">
+                            <a href="assets/results/edited/magicbrush-replace-14.mp4"> <video width="384" height="216" src="assets/results/edited/magicbrush-replace-14.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><p>swap the cupcake with a piece of cake</p></th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <a href="assets/results/original/magicbrush-remove-48.mp4">
+                            <a href="assets/results/original/magicbrush-remove-48.mp4"> <video width="384" height="216" src="assets/results/original/magicbrush-remove-48.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/results/edited/magicbrush-remove-48.mp4">
+                            <a href="assets/results/edited/magicbrush-remove-48.mp4"> <video width="384" height="216" src="assets/results/edited/magicbrush-remove-48.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><p>replace the table with a bonfire</p></th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <a href="assets/results/original/davis-all-95-1.mp4">
+                            <a href="assets/results/original/davis-all-95-1.mp4"> <video width="384" height="216" src="assets/results/original/davis-all-95-1.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/results/edited/davis-all-95-1.mp4">
+                            <a href="assets/results/edited/davis-all-95-1.mp4"> <video width="384" height="216" src="assets/results/edited/davis-all-95-1.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><p>change it into a chocolate train</p></th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <a href="assets/results/original/magicbrush-add-1.mp4">
+                            <a href="assets/results/original/magicbrush-add-1.mp4"> <video width="384" height="216" src="assets/results/original/magicbrush-add-1.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/results/edited/magicbrush-add-1.mp4">
+                            <a href="assets/results/edited/magicbrush-add-1.mp4"> <video width="384" height="216" src="assets/results/edited/magicbrush-add-1.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><p>add zebras and river</p></th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <a href="assets/results/original/magicbrush-replace-2.mp4">
+                            <a href="assets/results/original/magicbrush-replace-2.mp4"> <video width="384" height="216" src="assets/results/original/magicbrush-replace-2.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/results/edited/magicbrush-replace-2.mp4">
+                            <a href="assets/results/edited/magicbrush-replace-2.mp4"> <video width="384" height="216" src="assets/results/edited/magicbrush-replace-2.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><p>Make the piece of paper hanging on the wall a mirror</p></th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <a href="assets/results/original/expert2-all-13.mp4">
+                            <a href="assets/results/original/expert2-all-13.mp4"> <video width="384" height="216" src="assets/results/original/expert2-all-13.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/results/edited/expert2-all-13.mp4">
+                            <a href="assets/results/edited/expert2-all-13.mp4"> <video width="384" height="216" src="assets/results/edited/expert2-all-13.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><p>change space suit</p></th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <a href="assets/results/original/magicbrush-replace-52.mp4">
+                            <a href="assets/results/original/magicbrush-replace-52.mp4"> <video width="384" height="216" src="assets/results/original/magicbrush-replace-52.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/results/edited/magicbrush-replace-52.mp4">
+                            <a href="assets/results/edited/magicbrush-replace-52.mp4"> <video width="384" height="216" src="assets/results/edited/magicbrush-replace-52.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><p>change the flag of the united states for that of england</p></th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <a href="assets/results/original/magicbrush-color-40.mp4">
+                            <a href="assets/results/original/magicbrush-color-40.mp4"> <video width="384" height="216" src="assets/results/original/magicbrush-color-40.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/results/edited/magicbrush-color-40.mp4">
+                            <a href="assets/results/edited/magicbrush-color-40.mp4"> <video width="384" height="216" src="assets/results/edited/magicbrush-color-40.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><p>Make it a black sheep.</p></th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <a href="assets/results/original/magicbrush-remove-71.mp4">
+                            <a href="assets/results/original/magicbrush-remove-71.mp4"> <video width="384" height="216" src="assets/results/original/magicbrush-remove-71.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/results/edited/magicbrush-remove-71.mp4">
+                            <a href="assets/results/edited/magicbrush-remove-71.mp4"> <video width="384" height="216" src="assets/results/edited/magicbrush-remove-71.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><p>remove the clouds</p></th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <a href="assets/results/original/magicbrush-color-93.mp4">
+                            <a href="assets/results/original/magicbrush-color-93.mp4"> <video width="384" height="216" src="assets/results/original/magicbrush-color-93.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/results/edited/magicbrush-color-93.mp4">
+                            <a href="assets/results/edited/magicbrush-color-93.mp4"> <video width="384" height="216" src="assets/results/edited/magicbrush-color-93.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><p>make the phone booth red and add a person</p></th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <a href="assets/results/original/magicbrush-remove-64.mp4">
+                            <a href="assets/results/original/magicbrush-remove-64.mp4"> <video width="384" height="216" src="assets/results/original/magicbrush-remove-64.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/results/edited/magicbrush-remove-64.mp4">
+                            <a href="assets/results/edited/magicbrush-remove-64.mp4"> <video width="384" height="216" src="assets/results/edited/magicbrush-remove-64.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><p>remove middle fruit and put a cat in place</p></th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <a href="assets/results/original/magicbrush-add-73.mp4">
+                            <a href="assets/results/original/magicbrush-add-73.mp4"> <video width="384" height="216" src="assets/results/original/magicbrush-add-73.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/results/edited/magicbrush-add-73.mp4">
+                            <a href="assets/results/edited/magicbrush-add-73.mp4"> <video width="384" height="216" src="assets/results/edited/magicbrush-add-73.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><p>Put sunglasses on the girl.</p></th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <a href="assets/results/original/expert-all-9.mp4">
+                            <a href="assets/results/original/expert-all-9.mp4"> <video width="384" height="216" src="assets/results/original/expert-all-9.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/results/edited/expert-all-9.mp4">
+                            <a href="assets/results/edited/expert-all-9.mp4"> <video width="384" height="216" src="assets/results/edited/expert-all-9.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><p>remove tie adjusting action, change outfit</p></th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <a href="assets/results/original/magicbrush-action-69.mp4">
+                            <a href="assets/results/original/magicbrush-action-69.mp4"> <video width="384" height="216" src="assets/results/original/magicbrush-action-69.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/results/edited/magicbrush-action-69.mp4">
+                            <a href="assets/results/edited/magicbrush-action-69.mp4"> <video width="384" height="216" src="assets/results/edited/magicbrush-action-69.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><p>make him hold a cup</p></th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <a href="assets/results/original/magicbrush-remove-76.mp4">
+                            <a href="assets/results/original/magicbrush-remove-76.mp4"> <video width="384" height="216" src="assets/results/original/magicbrush-remove-76.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/results/edited/magicbrush-remove-76.mp4">
+                            <a href="assets/results/edited/magicbrush-remove-76.mp4"> <video width="384" height="216" src="assets/results/edited/magicbrush-remove-76.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><p>remove the tomato from one sandwich</p></th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <a href="assets/results/original/magicbrush-replace-36.mp4">
+                            <a href="assets/results/original/magicbrush-replace-36.mp4"> <video width="384" height="216" src="assets/results/original/magicbrush-replace-36.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/results/edited/magicbrush-replace-36.mp4">
+                            <a href="assets/results/edited/magicbrush-replace-36.mp4"> <video width="384" height="216" src="assets/results/edited/magicbrush-replace-36.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><p>make the cat lick its nose</p></th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <a href="assets/results/original/magicbrush-replace-56.mp4">
+                            <a href="assets/results/original/magicbrush-replace-56.mp4"> <video width="384" height="216" src="assets/results/original/magicbrush-replace-56.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/results/edited/magicbrush-replace-56.mp4">
+                            <a href="assets/results/edited/magicbrush-replace-56.mp4"> <video width="384" height="216" src="assets/results/edited/magicbrush-replace-56.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><p>make the ramp cement</p></th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <a href="assets/results/original/magicbrush-replace-99.mp4">
+                            <a href="assets/results/original/magicbrush-replace-99.mp4"> <video width="384" height="216" src="assets/results/original/magicbrush-replace-99.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/results/edited/magicbrush-replace-99.mp4">
+                            <a href="assets/results/edited/magicbrush-replace-99.mp4"> <video width="384" height="216" src="assets/results/edited/magicbrush-replace-99.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><p>place a cat in the counter</p></th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <a href="assets/results/original/magicbrush-replace-81.mp4">
+                            <a href="assets/results/original/magicbrush-replace-81.mp4"> <video width="384" height="216" src="assets/results/original/magicbrush-replace-81.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/results/edited/magicbrush-replace-81.mp4">
+                            <a href="assets/results/edited/magicbrush-replace-81.mp4"> <video width="384" height="216" src="assets/results/edited/magicbrush-replace-81.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><p>Have the instructor's jacket say "4" on it</p></th>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <p>&nbsp;</p>
+        <hr>
+        <h2 align="left" id="comparison_baselines">Comparison to Baselines</h2>
+        <br/>
+        <table width="1200" align="center">
+            <tbody>
+                <tr>
+                </tr>
+
+                <tr>
+                    <th style="font-size: 16px">Input</th>
+                    <th style="font-size: 16px">Mask</th>
+                    <th style="font-size: 16px">Prompt</th>
+                    <th style="font-size: 16px"><u>Ours</u></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th>
+                        <a href="assets/comp/original/magicbrush-replace-0.mp4">
+                            <a href="assets/comp/original/magicbrush-replace-0.mp4"> <video width="232" height="130.5" src="assets/comp/original/magicbrush-replace-0.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <img width="232" height="130.5" src="assets/comp/mask/magicbrush-replace-0.png" />
+                    </th>
+                    <th>
+                        <p style="font-size: 12px; font-weight: normal;">add a mountain in the background</p>
+                    </th>
+                    <th>
+                        <a href="assets/comp/ours/magicbrush-replace-0.mp4">
+                            <a href="assets/comp/ours/magicbrush-replace-0.mp4"> <video width="232" height="130.5" src="assets/comp/ours/magicbrush-replace-0.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th style="font-size: 16px">Fate/Zero</th>
+                    <th style="font-size: 16px">Spacetime</th>
+                    <th style="font-size: 16px">Pix2Video</th>
+                    <th style="font-size: 16px">RAVE</th>
+                    <th style="font-size: 16px">BDIA</th>
+                </tr>
+                <tr>
+                    <th>
+                        <a href="assets/comp/fate_zero/magicbrush-replace-0.mp4">
+                            <a href="assets/comp/fate_zero/magicbrush-replace-0.mp4"> <video width="232" height="130.5" src="assets/comp/fate_zero/magicbrush-replace-0.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/comp/diffusion_motion_transfer/magicbrush-replace-0.mp4">
+                            <a href="assets/comp/diffusion_motion_transfer/magicbrush-replace-0.mp4"> <video width="232" height="130.5" src="assets/comp/diffusion_motion_transfer/magicbrush-replace-0.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/comp/pix2video/magicbrush-replace-0.mp4">
+                            <a href="assets/comp/pix2video/magicbrush-replace-0.mp4"> <video width="232" height="130.5" src="assets/comp/pix2video/magicbrush-replace-0.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/comp/rave/magicbrush-replace-0.mp4">
+                            <a href="assets/comp/rave/magicbrush-replace-0.mp4"> <video width="232" height="130.5" src="assets/comp/rave/magicbrush-replace-0.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/comp/bdia/magicbrush-replace-0.mp4">
+                            <a href="assets/comp/bdia/magicbrush-replace-0.mp4"> <video width="232" height="130.5" src="assets/comp/bdia/magicbrush-replace-0.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                </tr>
+                <tr>
+                    <th><br/><br/><br/></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+
+                <tr>
+                    <th style="font-size: 16px">Input</th>
+                    <th style="font-size: 16px">Mask</th>
+                    <th style="font-size: 16px">Prompt</th>
+                    <th style="font-size: 16px"><u>Ours</u></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th>
+                        <a href="assets/comp/original/expert-all-0.mp4">
+                            <a href="assets/comp/original/expert-all-0.mp4"> <video width="232" height="130.5" src="assets/comp/original/expert-all-0.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <img width="232" height="130.5" src="assets/comp/mask/expert-all-0.png" />
+                    </th>
+                    <th>
+                        <p style="font-size: 12px; font-weight: normal;">add chandeliers</p>
+                    </th>
+                    <th>
+                        <a href="assets/comp/ours/expert-all-0.mp4">
+                            <a href="assets/comp/ours/expert-all-0.mp4"> <video width="232" height="130.5" src="assets/comp/ours/expert-all-0.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th style="font-size: 16px">Fate/Zero</th>
+                    <th style="font-size: 16px">Spacetime</th>
+                    <th style="font-size: 16px">Pix2Video</th>
+                    <th style="font-size: 16px">RAVE</th>
+                    <th style="font-size: 16px">BDIA</th>
+                </tr>
+                <tr>
+                    <th>
+                        <a href="assets/comp/fate_zero/expert-all-0.mp4">
+                            <a href="assets/comp/fate_zero/expert-all-0.mp4"> <video width="232" height="130.5" src="assets/comp/fate_zero/expert-all-0.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/comp/diffusion_motion_transfer/expert-all-0.mp4">
+                            <a href="assets/comp/diffusion_motion_transfer/expert-all-0.mp4"> <video width="232" height="130.5" src="assets/comp/diffusion_motion_transfer/expert-all-0.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/comp/pix2video/expert-all-0.mp4">
+                            <a href="assets/comp/pix2video/expert-all-0.mp4"> <video width="232" height="130.5" src="assets/comp/pix2video/expert-all-0.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/comp/rave/expert-all-0.mp4">
+                            <a href="assets/comp/rave/expert-all-0.mp4"> <video width="232" height="130.5" src="assets/comp/rave/expert-all-0.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/comp/bdia/expert-all-0.mp4">
+                            <a href="assets/comp/bdia/expert-all-0.mp4"> <video width="232" height="130.5" src="assets/comp/bdia/expert-all-0.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                </tr>
+                <tr>
+                    <th><br/><br/><br/></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+
+                <tr>
+                    <th style="font-size: 16px">Input</th>
+                    <th style="font-size: 16px">Mask</th>
+                    <th style="font-size: 16px">Prompt</th>
+                    <th style="font-size: 16px"><u>Ours</u></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th>
+                        <a href="assets/comp/original/expert-all-2.mp4">
+                            <a href="assets/comp/original/expert-all-2.mp4"> <video width="232" height="130.5" src="assets/comp/original/expert-all-2.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <img width="232" height="130.5" src="assets/comp/mask/expert-all-2.png" />
+                    </th>
+                    <th>
+                        <p style="font-size: 12px; font-weight: normal;">add a parrot on his shoulder</p>
+                    </th>
+                    <th>
+                        <a href="assets/comp/ours/expert-all-2.mp4">
+                            <a href="assets/comp/ours/expert-all-2.mp4"> <video width="232" height="130.5" src="assets/comp/ours/expert-all-2.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th style="font-size: 16px">Fate/Zero</th>
+                    <th style="font-size: 16px">Spacetime</th>
+                    <th style="font-size: 16px">Pix2Video</th>
+                    <th style="font-size: 16px">RAVE</th>
+                    <th style="font-size: 16px">BDIA</th>
+                </tr>
+                <tr>
+                    <th>
+                        <a href="assets/comp/fate_zero/expert-all-2.mp4">
+                            <a href="assets/comp/fate_zero/expert-all-2.mp4"> <video width="232" height="130.5" src="assets/comp/fate_zero/expert-all-2.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/comp/diffusion_motion_transfer/expert-all-2.mp4">
+                            <a href="assets/comp/diffusion_motion_transfer/expert-all-2.mp4"> <video width="232" height="130.5" src="assets/comp/diffusion_motion_transfer/expert-all-2.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/comp/pix2video/expert-all-2.mp4">
+                            <a href="assets/comp/pix2video/expert-all-2.mp4"> <video width="232" height="130.5" src="assets/comp/pix2video/expert-all-2.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/comp/rave/expert-all-2.mp4">
+                            <a href="assets/comp/rave/expert-all-2.mp4"> <video width="232" height="130.5" src="assets/comp/rave/expert-all-2.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/comp/bdia/expert-all-2.mp4">
+                            <a href="assets/comp/bdia/expert-all-2.mp4"> <video width="232" height="130.5" src="assets/comp/bdia/expert-all-2.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                </tr>
+                <tr>
+                    <th><br/><br/><br/></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <p>&nbsp;</p>
+        <hr>
+        <h2 align="left" id="ablation">Ablation</h2>
+        <br/>
+        <table width="1200" align="center">
+            <tbody>
+                <tr>
+                </tr>
+                <tr>
+                    <th style="font-size: 16px">Input video</th>
+                    <th style="font-size: 16px">w/o Noise Extrapolation</th>
+                    <th style="font-size: 16px">w/o Latent Norm</th>
+                    <th style="font-size: 16px">w/o Latent Rescaling</th>
+                    <th style="font-size: 16px">Full Method<th>
+                </tr>
+                <tr>
+                    <th>
+                        <a href="assets/original/davis-all-2-4.mp4">
+                            <a href="assets/original/davis-all-2-4.mp4"> <video width="240" height="135" src="assets/original/davis-all-2-4.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/ablations/davis-all-2-4-extrapolation.mp4">
+                            <a href="assets/ablations/davis-all-2-4-extrapolation.mp4"> <video width="232" height="130.5" src="assets/ablations/davis-all-2-4-extrapolation.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/ablations/davis-all-2-4-norm.mp4">
+                            <a href="assets/ablations/davis-all-2-4-norm.mp4"> <video width="232" height="130.5" src="assets/ablations/davis-all-2-4-norm.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/ablations/davis-all-2-4-rescale.mp4">
+                            <a href="assets/ablations/davis-all-2-4-rescale.mp4"> <video width="232" height="130.5" src="assets/ablations/davis-all-2-4-rescale.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/edited/davis-all-2-4.mp4">
+                            <a href="assets/edited/davis-all-2-4.mp4"> <video width="232" height="130.5" src="assets/edited/davis-all-2-4.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>&nbsp;</p>
+        <hr>
+        <h2 align="left" id="limitations">Limitations</h2>
+        <br/>
+
+        <p>Limitation 1: Large group of people, multiple heterogeneous movements. The model does not reproduce all the movements.</p>
+        <table width="1200" align="center">
+            <tbody>
+                <tr>
+                    <th style="font-size: 16px">Input video</th>
+                    <th style="font-size: 16px">Edited video</th>
+                    <th style="font-size: 16px">Instruction</th>
+                </tr>
+                <tr>
+                    <th>
+                        <a href="assets/limitations/original/expert-all-3.mp4">
+                            <a href="assets/limitations/original/expert-all-3.mp4"> <video width="384" height="216" src="assets/limitations/original/expert-all-3.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/limitations/edited/expert-all-3.mp4">
+                            <a href="assets/limitations/edited/expert-all-3.mp4"> <video width="384" height="216" src="assets/limitations/edited/expert-all-3.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><p style="font-size: 12px; font-weight: normal;">change the people on the left,<br/>in the background</p></th>
+                </tr>
+            </tbody>
+        </table>
+        <p>Limitation 2: Light flickering. The model does not reproduce the lighting effect accurately.</p>
+        <table width="1200" align="center">
+            <tbody>
+                <tr>
+                    <th style="font-size: 16px">Input video</th>
+                    <th style="font-size: 16px">Edited video</th>
+                    <th style="font-size: 16px">Instruction</th>
+                </tr>
+                <tr>
+                    <th>
+                        <a href="assets/limitations/original/expert-all-10.mp4">
+                            <a href="assets/limitations/original/expert-all-10.mp4"> <video width="384" height="216" src="assets/limitations/original/expert-all-10.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th>
+                        <a href="assets/limitations/edited/expert-all-10.mp4">
+                            <a href="assets/limitations/edited/expert-all-10.mp4"> <video width="384" height="216" src="assets/limitations/edited/expert-all-10.mp4" autoplay loop controls muted currentTime="0" /> </a>
+                        </a>
+                    </th>
+                    <th><p style="font-size: 12px; font-weight: normal;">turn the light ball into a planet</p></th>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+
+    <script>
+        document.addEventListener('keydown', function (event) {
+            // Check if the pressed key is the spacebar (keyCode 32)
+            if (event.keyCode === 32) {
+                // Pause all videos on the page
+                var videos = document.querySelectorAll('video');
+                videos.forEach(function(video) {
+                    if (!video.paused) {
+                        video.pause();
+                    } else {
+                        video.play();
+                    }
+                });
+                // Prevent the default behavior of the space key (e.g., scrolling the page)
+                event.preventDefault();
+            }
+        });
+    </script>
+
+<!-- Source file credit: https://diffusion-motion-transfer.github.io/sm/ -->
+
+</body>
+
+</html>
